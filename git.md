@@ -207,6 +207,9 @@ urgent mentre estem treballant en una nova prestació).
     git branch testing     # crea branca 'testing'
     git checkout testing   # triem 'testing' com a branca activa
 
+En git, una branca és només un punter a un commit determinat. La branca
+activa es "mou" quan fem commit.
+
 Quines branques hi ha al repo:
 
     git branch      # locals

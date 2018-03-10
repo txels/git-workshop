@@ -195,7 +195,24 @@ urgent mentre estem treballant en una nova prestació).
     git branch testing     # crea branca 'testing'
     git checkout testing   # triem 'testing' com a branca activa
 
-Podem inspeccionar 
+Quines branques hi ha al repo:
+
+    git branch      # locals
+    git branch -a   # locals i remotes
+
+Llegir totes les branques remotes:
+
+    git fetch
+    git fetch -p    # esborra branques remotes que ha no existeixen
+
+Podem inspeccionar canvis a la nostra branca respecte de `master`.
+
+    git diff master
+
+O invertint el punt de vista (què hi ha a master re: la nostra branca):
+
+    git diff ..master
+
 
 
 # Guardar canvis "per més tard"

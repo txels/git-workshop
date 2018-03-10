@@ -179,10 +179,14 @@ identificar p.e. una release concreta del nostre porjecte, o qualsevol versió
 de referència que ens interessa tenir identificada.
 
     git tag 1.0.0
-    git tag
+    git tag  # llista tots els tags
+
+    git push origin --tags
 
 
 # Branques
+
+![Branching](https://git-scm.com/book/en/v2/images/branch-and-history.png)
 
 Fem servir branques per aillar millor conjunts de canvis (p.e. si estem
 desenvolupant diverses noves funcionalitats alhora, o hem d'arreglar un bug
@@ -206,12 +210,19 @@ canvis remots etc.
 
 
 
+# Aliases
 
-# Branques i "tags"
+Et pots crear aliases per simplificar les comandes que fas servir habitualment,
+o per les que costa recordar.
 
-![Branching](https://git-scm.com/book/en/v2/images/branch-and-history.png)
+    git config --global alias.graph 'log --graph --branches --remotes --tags --date-order --oneline --decorate'
+    git config --global alias.st status
+    git config --global alias.amend 'commit --amend'
+    git config --global alias.unstage 'reset HEAD --'
+    git config --global alias.last 'log -1 HEAD'
+    git config --global alias.visual '!gitk'
 
-
+(~/.gitconfig)
 
 # Links
 

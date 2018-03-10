@@ -160,7 +160,7 @@ Si hi ha hagut canvis en remot, haurem de fer un `pull` abans de poder fer
 `push`. P.e. si estem a `master`:
 
     git pull origin master
-    git push origin master
+    git push -u origin master
 
 
 ## Parèntesi: què és "origin"?
@@ -170,6 +170,18 @@ Si hi ha hagut canvis en remot, haurem de fer un `pull` abans de poder fer
 
 Amb git un mateix repo local pot apuntar a molts remots. Quan fem push, hem
 d'especificar a quin.
+
+
+## Parèntesi: github
+
+- Crear compte a github
+- Crear repo a github
+- Opcional: generar claus RSA?
+
+Pujar el que tenim al repo:
+
+    git remote add origin https://github.com/txels/git-workshop.git
+    git push -u origin master
 
 
 # Tags

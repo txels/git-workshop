@@ -225,6 +225,12 @@ O invertint el punt de vista (què hi ha a master re: la nostra branca):
 
     git diff ..master
 
+Després de fer canvis pertinents (i commit) a la branca, podem en algun
+moment incorporar els canvis a la branca `master`:
+
+    git checkout master
+    git branch --no-merged
+    git merge testing
 
 
 # Guardar canvis "per més tard"

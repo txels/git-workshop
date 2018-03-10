@@ -70,6 +70,7 @@ Observant canvis registrats:
 
     git log
     git log --oneline --decorate --graph
+    git log --oneline --decorate --graph --all
     git show HEAD
 
 Cada commit té un identificador únic (SHA-256).
@@ -78,7 +79,7 @@ Cada commit té un identificador únic (SHA-256).
 # Parèntesi: què vol dir HEAD?
 
 HEAD és una referència (`ref`) que apunta al darrer commit de la branca actual.
-(Veurem més en detall branques després). 
+(Veurem més en detall branques després).
 Per ara saber que hi ha una branca per defecte: `master`.
 
 ## Refs
@@ -120,11 +121,82 @@ Veure què hem canviat:
     git diff  # canvis que no estan a l'index, no es commitegen per defecte
     git diff --cached  # canvis que estan a l'index, es commitejaran
 
-
 ![Cicle d'estats](https://git-scm.com/book/en/v2/images/lifecycle.png)
+
+Si tenim canvis a l'index i els en volem treure, podem fer:
+
+    git reset
+
+Si tenim canvis a l'index i els volem anihilar per sempre, podem fer:
+
+    git reset --hard
+
+(feu-ho només si no us importa perdre aquests canvis)
 
 
 # Compartint canvis amb el món
+
+Mentre anem fent i desfent commits, només ens afecta al nostre clon del repo.
+Quan estem preparats per publicar els canvis al món, llavors fem:
+
+    git push <remot> <branca>
+
+Si ningú més ha fet canvis a la branca on estem del repo remot, tot anirà bé.
+
+Si hi ha hagut canvis en remot, haurem de fer un `pull` abans de poder fer
+`push`. P.e. si estem a `master`:
+
+    git pull origin master
+    git push origin master
+
+
+## Parèntesi: què és "origin"?
+
+`origin` és el nom d'un repositori remot. En la convenció de git, el nom
+`origin` se li dóna per defecte al repo d'on hem clonat.
+
+Amb git un mateix repo local pot apuntar a molts remots. Quan fem push, hem
+d'especificar a quin.
+
+
+# Tags
+
+Podem crear un tag en qualsevol moment per a un commit concret, per a
+identificar p.e. una release concreta del nostre porjecte, o qualsevol versió
+de referència que ens interessa tenir identificada.
+
+    git tag 1.0.0
+    git tag
+
+
+# Branques
+
+Fem servir branques per aillar millor conjunts de canvis (p.e. si estem
+desenvolupant diverses noves funcionalitats alhora, o hem d'arreglar un bug
+urgent mentre estem treballant en una nova prestació).
+
+    git branch testing     # crea branca 'testing'
+    git checkout testing   # triem 'testing' com a branca activa
+
+Podem inspeccionar 
+
+
+# Guardar canvis "per més tard"
+
+Podem desar canvis temporalment al "stash":
+
+    git stash
+    git stash save "Canvis a mitges de blah..."
+
+Útil si tenim coses a mig editar i hem de canviar de branca, fer pull de
+canvis remots etc.
+
+
+
+
+# Branques i "tags"
+
+![Branching](https://git-scm.com/book/en/v2/images/branch-and-history.png)
 
 
 

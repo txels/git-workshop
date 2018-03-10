@@ -133,6 +133,19 @@ Si tenim canvis a l'index i els volem anihilar per sempre, podem fer:
 
 (feu-ho només si no us importa perdre aquests canvis)
 
+En alguns casos, es pot fer "add + commit" en una sola comanda:
+
+    git commit -am "Amb xuleria"
+
+
+# Modificant commits anteriors
+
+També podem modificar un commit existent. Casos típics són que ens hem
+descuidat afegir un arxiu, o que volem modificar el missatge. P.e.:
+
+    git commit --amend -m "Un altre missatge"
+    git commit -a --amend
+
 
 # Compartint canvis amb el món
 

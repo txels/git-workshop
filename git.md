@@ -63,12 +63,69 @@ versions).
 Registrant canvis:
 
     git add <arxiu[s]>
+    git diff --cached
     git commit -m "Missatge..."
 
 Observant canvis registrats:
 
     git log
-    git diff HEAD^
+    git log --oneline --decorate --graph
+    git show HEAD
+
+Cada commit té un identificador únic (SHA-256).
+
+
+# Parèntesi: què vol dir HEAD?
+
+HEAD és una referència (`ref`) que apunta al darrer commit de la branca actual.
+(Veurem més en detall branques després). 
+Per ara saber que hi ha una branca per defecte: `master`.
+
+## Refs
+
+Una referència en git és una mena de "punter" a una versió concreta del
+repositori. Altres referències que podem fer servir:
+
+- Noms de branques
+- IDs de commits
+- Etiquetes (tags)
+- Referències relatives, p.e.:
+  - `HEAD^` és el commit anterior al darrer.
+  - Es pot fer servir també `HEAD^^`, `HEAD~2` etc...
+  - `master^`
+
+# Desfent canvis
+
+Desfer el darrer commit:
+
+    git reset HEAD^
+
+Es poden moure i esborrar arxius:
+
+    git mv <nom-original> <nom-nou>
+    git rm <nom>
+
+...per registrar els canvis, cal fer commit!
+
+
+# Parèntesi: index o "staging" area
+
+En git, els canvis es registren en dues "fases":
+
+- stage (add, mv, rm...)
+- commit: registrar els canvis amb un missatge (git assigna un ID únic)
+
+Veure què hem canviat:
+
+    git diff  # canvis que no estan a l'index, no es commitegen per defecte
+    git diff --cached  # canvis que estan a l'index, es commitejaran
+
+
+![Cicle d'estats](https://git-scm.com/book/en/v2/images/lifecycle.png)
+
+
+# Compartint canvis amb el món
+
 
 
 # Links

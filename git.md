@@ -180,7 +180,7 @@ d'especificar a quin.
 
 Pujar el que tenim al repo:
 
-    git remote add origin https://github.com/txels/git-workshop.git
+    git remote add origin https://github.com/<usuari>/<repo>.git
     git push -u origin master
 
 
@@ -234,6 +234,12 @@ moment incorporar els canvis a la branca `master`:
     git checkout master
     git branch --no-merged
     git merge testing
+
+
+## Resolució de conflictes
+
+Quan es treballa en dues branques alhora, de vegades en combinar els canvis
+es produeixen conflictes.
 
 
 # Guardar canvis "per més tard"

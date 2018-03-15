@@ -187,7 +187,7 @@ Pujar el que tenim al repo:
 # Tags
 
 Podem crear un tag en qualsevol moment per a un commit concret, per a
-identificar p.e. una release concreta del nostre porjecte, o qualsevol versió
+identificar p.e. una release concreta del nostre projecte, o qualsevol versió
 de referència que ens interessa tenir identificada.
 
     git tag 1.0.0
